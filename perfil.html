@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="inicio.html" class="brand">
+        <img src="assets/logo.png" class="logo-img" alt="AulaNet Logo">
+      </a>
+      
+      <nav class="main-nav">
+        <a href="inicio.html" class="nav-link">Inicio</a>
+        <a href="tutores.html" class="nav-link">Buscar Tutores</a>
+        <a href="panel.html" class="nav-link">Mi Panel</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn outline" id="logout-btn">Cerrar Sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="perfil-container">
+    <h1>Mi Perfil</h1>
+    <p>Gestiona tu información personal</p>
+
+    <section class="perfil-content">
+      <div class="perfil-sidebar">
+        <div class="avatar">AG</div>
+        <h3>Ana García</h3>
+        <p>mjhsjhd@gmail.com</p>
+        <button class="btn ghost">Cambiar Foto</button>
+      </div>
+
+      <div class="perfil-form">
+        <div class="tabs">
+          <button class="active">Información Personal</button>
+          <button>Seguridad</button>
+          <button>Preferencias</button>
+        </div>
+
+        <div class="form-section">
+          <label>Nombre</label>
+          <input type="text" value="Ana">
+
+          <label>Apellidos</label>
+          <input type="text" value="García">
+
+          <label>Email</label>
+          <input type="email" value="mjhsjhd@gmail.com">
+
+          <label>Teléfono</label>
+          <input type="text" value="+57 123 456 7890">
+
+          <label>Ubicación</label>
+          <input type="text" value="Barranquilla, Colombia">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"></div>
+  </footer>
+
+  <script>
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'inicio.html';
+    });
+  </script>
+</body>
+</html>

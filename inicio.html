@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AulaNet</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="inicio.css">
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="inicio.html" class="brand">
+        <img src="assets/logo.png" class="logo-img" alt="AulaNet Logo">
+      </a>
+
+      <nav class="main-nav">
+        <a href="inicio.html" class="nav-link active">Inicio</a>
+        <a href="tutores.html" class="nav-link">Buscar Tutores</a>
+        <a href="panel.html" class="nav-link">Mi Panel</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn ghost" href="login.html" id="btn-login">Iniciar Sesión</a>
+        <a class="btn primary" href="login.html" id="btn-register">Registrarse</a>
+        <a class="btn outline" href="perfil.html" id="btn-profile" style="display:none;">Mi Perfil</a>
+        <a class="btn outline" href="#" id="btn-logout" style="display:none;">Cerrar Sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>Aprende con los mejores <strong>tutores online</strong></h1>
+          <p class="lead">Conecta con tutores expertos para mejorar tus habilidades académicas. Clases personalizadas, horarios flexibles y resultados garantizados.</p>
+          <form class="search-form" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="¿Qué quieres aprender? (ej. matemáticas, inglés...)" class="search-input">
+            <button class="btn search-btn" type="submit">Buscar</button>
+          </form>
+          <div class="hero-cta">
+            <button class="btn outline">Empezar como Estudiante</button>
+            <button class="btn text">Ser Tutor</button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-card">
+            <img src="assets/profesor.jpeg" alt="Profesor de inglés" class="profe-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats container">
+      <div class="stat">
+        <div class="stat-number">2,500+</div>
+        <div class="stat-label">Tutores Activos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">45,000+</div>
+        <div class="stat-label">Horas de Clase</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">4.8</div>
+        <div class="stat-label">Calificación Promedio</div>
+      </div>
+    </section>
+
+    <section class="topics container">
+      <h2>Materias Populares</h2>
+      <p class="muted">Encuentra tutores especializados en las materias más demandadas</p>
+      <div class="topics-grid">
+        <div class="topic-card">
+          <div class="topic-icon"><i class="fas fa-square-root-alt"></i></div>
+          <div class="topic-title">Matemáticas</div>
+          <div class="topic-sub">166 tutores disponibles</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-icon"><i class="fas fa-flask"></i></div>
+          <div class="topic-title">Ciencias</div>
+          <div class="topic-sub">134 tutores disponibles</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="topic-title">Programación</div>
+          <div class="topic-sub">89 tutores disponibles</div>
+        </div>
+        <div class="topic-card">
+          <div class="topic-icon"><i class="fas fa-book"></i></div>
+          <div class="topic-title">Literatura</div>
+          <div class="topic-sub">80 tutores disponibles</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta container cta-strong">
+      <div class="cta-inner">
+        <h3>¿Listo para comenzar tu viaje de aprendizaje?</h3>
+        <p class="muted">Únete a miles de estudiantes que ya están mejorando sus notas</p>
+        <a href="login.html" class="cta-btn">Empezar Ahora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"></div>
+  </footer>
+
+  <script>
+    function updateHeaderButtons() {
+      const loggedIn = localStorage.getItem('loggedIn') === 'true';
+      document.getElementById('btn-login').style.display = loggedIn ? 'none' : '';
+      document.getElementById('btn-register').style.display = loggedIn ? 'none' : '';
+      document.getElementById('btn-profile').style.display = loggedIn ? '' : 'none';
+      document.getElementById('btn-logout').style.display = loggedIn ? '' : 'none';
+    }
+
+    function logout() {
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'inicio.html';
+    }
+
+    document.getElementById('btn-logout').addEventListener('click', (e) => {
+      e.preventDefault();
+      logout();
+    });
+
+    updateHeaderButtons();
+  </script>
+</body>
+</html>
