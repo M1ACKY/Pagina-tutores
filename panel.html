@@ -11,11 +11,11 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="inicio.html" class="brand">
+      <a href="index.html" class="brand">
         <img src="assets/logo.png" class="logo-img" alt="AulaNet Logo">
       </a>
       <nav class="main-nav">
-        <a href="inicio.html" class="nav-link">Inicio</a>
+        <a href="index.html" class="nav-link">Inicio</a>
         <a href="tutores.html" class="nav-link">Buscar Tutores</a>
         <a href="panel.html" class="nav-link active">Mi Panel</a>
       </nav>
@@ -95,7 +95,7 @@
 
     function logout() {
       localStorage.removeItem('loggedIn');
-      window.location.href = 'inicio.html';
+      window.location.href = 'index.html';
     }
 
     document.getElementById('btn-logout').addEventListener('click', (e) => {

@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AulaNet</title>
   <link rel="stylesheet" href="global.css">
-  <link rel="stylesheet" href="inicio.css">
-  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="index.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="inicio.html" class="brand">
+      <a href="index.html" class="brand">
         <img src="assets/logo.png" class="logo-img" alt="AulaNet Logo">
       </a>
 
       <nav class="main-nav">
-        <a href="inicio.html" class="nav-link active">Inicio</a>
+        <a href="index.html" class="nav-link active">Inicio</a>
         <a href="tutores.html" class="nav-link">Buscar Tutores</a>
         <a href="panel.html" class="nav-link">Mi Panel</a>
       </nav>
@@ -120,7 +119,7 @@
 
     function logout() {
       localStorage.removeItem('loggedIn');
-      window.location.href = 'inicio.html';
+      window.location.href = 'index.html';
     }
 
     document.getElementById('btn-logout').addEventListener('click', (e) => {
